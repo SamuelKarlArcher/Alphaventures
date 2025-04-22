@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+html,
+body {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+/* app/globals.css */
+/* Section Layout */
+.section {
+  max-width: 1200px;
+  min-height: 100vh;
+  padding: 4rem 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-content {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.section-text,
+.section-image {
+  flex: 1 1 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-text,
+  .section-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    text-align: left;
+  }
+}
+
+/* Pricing Cards */
+.pricing-section {
+  background-color: #0d0d0d;
+  color: white;
+  padding: 1rem 1vw;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.pricing-card {
+  background: radial-gradient(circle at top left, #222, #111);
+  border-radius: 1rem;
+
+max-width: 100%;
+  color: #ffffff;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+
+  align-items: center;
+  justify-content: space-between;
+
+  transition: transform 0.3s ease;
+  text-align: left; /* Ensures text stays aligned on larger screens */
+}
+
+/* On small screens, stack content vertically */
+@media (max-width: 767px) {
+  .pricing-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.pricing-card:hover {
+  transform: scale(1.03);
+}
+
+.pricing-card h3 {
+  color: #414141;
+}
+
+.pricing-card button {
+  background-color: #9999aa;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pricing-card button:hover {
+  background-color: #b0b0c1;
+}
+
+.pricing-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  list-style: disc;
+  color: #ffffff;
+}
+
+.features-section {
+  background-color: #000000; /* Dark background for contrast */
+  color: #ffffff; /* White text */
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.features-section li {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
+.section-img
+{
+  max-height: 90vh;
+}
